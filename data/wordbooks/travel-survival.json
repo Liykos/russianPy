@@ -1,0 +1,74 @@
+{
+  "slug": "travel-survival-ru-a2",
+  "title": "俄语旅行生存词汇 A2（测试）",
+  "description": "覆盖机场、酒店、交通等常见场景。",
+  "language": "ru",
+  "level": "A2",
+  "source": "Local-Test",
+  "entries": [
+    {
+      "russian": "вокзал",
+      "chinese": "火车站",
+      "pronunciation": "vokzal",
+      "exampleSentence": "Где находится вокзал?",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "билет",
+      "chinese": "票",
+      "pronunciation": "bilet",
+      "exampleSentence": "Мне нужен билет до Санкт-Петербурга.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "поезд",
+      "chinese": "火车",
+      "pronunciation": "poyezd",
+      "exampleSentence": "Поезд отправляется в восемь часов.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "гостиница",
+      "chinese": "酒店",
+      "pronunciation": "gostinitsa",
+      "exampleSentence": "Мы остановились в гостинице.",
+      "derivatives": "гость",
+      "note": ""
+    },
+    {
+      "russian": "номер",
+      "chinese": "房间，号码",
+      "pronunciation": "nomer",
+      "exampleSentence": "У меня забронирован номер.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "аэропорт",
+      "chinese": "机场",
+      "pronunciation": "aeroport",
+      "exampleSentence": "Мы едем в аэропорт.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "паспорт",
+      "chinese": "护照",
+      "pronunciation": "pasport",
+      "exampleSentence": "Покажите ваш паспорт, пожалуйста.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "карта",
+      "chinese": "地图，卡",
+      "pronunciation": "karta",
+      "exampleSentence": "У вас есть карта города?",
+      "derivatives": "карточка",
+      "note": ""
+    }
+  ]
+}

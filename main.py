@@ -3,7 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from database import engine
 from models import Base
-from routers import auth, words
+from migrations import run_schema_migrations
+from routers import auth, books, words
 
 app = FastAPI()
 
@@ -22,8 +23,10 @@ app.add_middleware(
 
 app.include_router(auth.router)
 app.include_router(words.router)
+app.include_router(books.router)
 
 Base.metadata.create_all(bind=engine)
+run_schema_migrations(engine)
 
 if __name__ == "__main__":
     import uvicorn

@@ -1,0 +1,74 @@
+{
+  "slug": "exam-frequency-ru-b1",
+  "title": "俄语考试高频词 B1（测试）",
+  "description": "偏书面和考试场景的高频词。",
+  "language": "ru",
+  "level": "B1",
+  "source": "Local-Test",
+  "entries": [
+    {
+      "russian": "анализ",
+      "chinese": "分析",
+      "pronunciation": "analiz",
+      "exampleSentence": "Нам нужен подробный анализ текста.",
+      "derivatives": "анализировать",
+      "note": ""
+    },
+    {
+      "russian": "доказательство",
+      "chinese": "证据，证明",
+      "pronunciation": "dokazatelstvo",
+      "exampleSentence": "Это важное доказательство.",
+      "derivatives": "доказать",
+      "note": ""
+    },
+    {
+      "russian": "сравнивать",
+      "chinese": "比较",
+      "pronunciation": "sravnivat",
+      "exampleSentence": "Нужно сравнивать два подхода.",
+      "derivatives": "сравнение",
+      "note": ""
+    },
+    {
+      "russian": "фактор",
+      "chinese": "因素",
+      "pronunciation": "faktor",
+      "exampleSentence": "Это ключевой фактор успеха.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "результат",
+      "chinese": "结果",
+      "pronunciation": "rezultat",
+      "exampleSentence": "Результат оказался лучше ожиданий.",
+      "derivatives": "результативный",
+      "note": ""
+    },
+    {
+      "russian": "причина",
+      "chinese": "原因",
+      "pronunciation": "prichina",
+      "exampleSentence": "Назовите главную причину.",
+      "derivatives": "причинный",
+      "note": ""
+    },
+    {
+      "russian": "объяснять",
+      "chinese": "解释",
+      "pronunciation": "obyasnyat",
+      "exampleSentence": "Преподаватель подробно объясняет тему.",
+      "derivatives": "объяснение",
+      "note": ""
+    },
+    {
+      "russian": "вывод",
+      "chinese": "结论",
+      "pronunciation": "vyvod",
+      "exampleSentence": "Сделайте краткий вывод.",
+      "derivatives": "выводить",
+      "note": ""
+    }
+  ]
+}

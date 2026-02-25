@@ -1,0 +1,58 @@
+{
+  "slug": "tem4-russian-core",
+  "title": "俄语专四核心词汇（示例）",
+  "description": "示例词书，可替换为完整专四词表。格式支持发音、例句、衍生词。",
+  "language": "ru",
+  "level": "TEM4",
+  "source": "Custom",
+  "entries": [
+    {
+      "russian": "абсолютный",
+      "chinese": "绝对的",
+      "pronunciation": "absolyutnyy",
+      "exampleSentence": "Это абсолютный факт.",
+      "derivatives": "абсолютно",
+      "note": "常见书面词"
+    },
+    {
+      "russian": "бегать",
+      "chinese": "跑（反复）",
+      "pronunciation": "begat'",
+      "exampleSentence": "Он любит бегать утром.",
+      "derivatives": "бег, бегун",
+      "note": ""
+    },
+    {
+      "russian": "внимание",
+      "chinese": "注意力",
+      "pronunciation": "vnimaniye",
+      "exampleSentence": "Обратите внимание на детали.",
+      "derivatives": "внимательный",
+      "note": ""
+    },
+    {
+      "russian": "говорить",
+      "chinese": "说",
+      "pronunciation": "govorit'",
+      "exampleSentence": "Она говорит по-русски.",
+      "derivatives": "разговор, говорящий",
+      "note": ""
+    },
+    {
+      "russian": "достигать",
+      "chinese": "达到",
+      "pronunciation": "dostigat'",
+      "exampleSentence": "Нужно достигать цели шаг за шагом.",
+      "derivatives": "достижение",
+      "note": ""
+    },
+    {
+      "russian": "естественный",
+      "chinese": "自然的",
+      "pronunciation": "yestestvennyy",
+      "exampleSentence": "Это естественный процесс.",
+      "derivatives": "естественно",
+      "note": ""
+    }
+  ]
+}

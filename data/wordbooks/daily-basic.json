@@ -1,0 +1,74 @@
+{
+  "slug": "daily-basic-ru-a1",
+  "title": "俄语日常入门 A1（测试）",
+  "description": "日常高频词，适合入门练习。",
+  "language": "ru",
+  "level": "A1",
+  "source": "Local-Test",
+  "entries": [
+    {
+      "russian": "привет",
+      "chinese": "你好",
+      "pronunciation": "privet",
+      "exampleSentence": "Привет, как дела?",
+      "derivatives": "",
+      "note": "打招呼"
+    },
+    {
+      "russian": "спасибо",
+      "chinese": "谢谢",
+      "pronunciation": "spasibo",
+      "exampleSentence": "Спасибо за помощь.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "пожалуйста",
+      "chinese": "不客气，请",
+      "pronunciation": "pozhaluysta",
+      "exampleSentence": "Скажите, пожалуйста.",
+      "derivatives": "",
+      "note": ""
+    },
+    {
+      "russian": "работа",
+      "chinese": "工作",
+      "pronunciation": "rabota",
+      "exampleSentence": "У меня много работы.",
+      "derivatives": "работать",
+      "note": ""
+    },
+    {
+      "russian": "время",
+      "chinese": "时间",
+      "pronunciation": "vremya",
+      "exampleSentence": "У нас мало времени.",
+      "derivatives": "временный",
+      "note": ""
+    },
+    {
+      "russian": "друг",
+      "chinese": "朋友",
+      "pronunciation": "drug",
+      "exampleSentence": "Это мой лучший друг.",
+      "derivatives": "дружба",
+      "note": ""
+    },
+    {
+      "russian": "город",
+      "chinese": "城市",
+      "pronunciation": "gorod",
+      "exampleSentence": "Москва большой город.",
+      "derivatives": "городской",
+      "note": ""
+    },
+    {
+      "russian": "семья",
+      "chinese": "家庭",
+      "pronunciation": "semya",
+      "exampleSentence": "У меня большая семья.",
+      "derivatives": "семейный",
+      "note": ""
+    }
+  ]
+}
