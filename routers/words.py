@@ -13,6 +13,7 @@ from routers.auth import get_current_user
 router = APIRouter(prefix="/words", tags=["words"])
 
 NEW_WORD_RATIO = 0.7
+MIN_FORGOTTEN_RATIO = 0.2
 
 
 def _start_of_today() -> datetime:
@@ -101,6 +102,31 @@ def _mix_words(new_words: list[models.Word], forgotten_words: list[models.Word],
     return mixed
 
 
+def _build_forgotten_queue(words: list[models.Word]) -> list[models.Word]:
+    """
+    Build a dynamic forgotten queue:
+    1) group by due date (oldest day first),
+    2) inside the same day, prioritize older review timestamps.
+    """
+    buckets: dict[date, list[models.Word]] = {}
+    for word in words:
+        due_base = word.nextReviewDate or datetime.min
+        due_date = due_base.date()
+        buckets.setdefault(due_date, []).append(word)
+
+    queue: list[models.Word] = []
+    for due_date in sorted(buckets.keys()):
+        bucket = sorted(
+            buckets[due_date],
+            key=lambda item: (
+                item.lastReviewDate or datetime.min,
+                item.id,
+            ),
+        )
+        queue.extend(bucket)
+    return queue
+
+
 def _build_today_plan(current_user: models.User, db: Session) -> schemas.TodayStudyPlanOut:
     settings = _ensure_user_settings(db, current_user.id)
     daily_target = max(1, settings.dailyTarget)
@@ -115,19 +141,20 @@ def _build_today_plan(current_user: models.User, db: Session) -> schemas.TodaySt
         new_candidates_query = new_candidates_query.filter(models.Word.bookId == settings.currentBookId)
 
     new_candidates = new_candidates_query.order_by(models.Word.id.asc()).all()
-    forgotten_candidates = db.query(models.Word).filter(
+    forgotten_raw_candidates = db.query(models.Word).filter(
         models.Word.userId == current_user.id,
         models.Word.state == "forgotten",
         models.Word.nextReviewDate <= today,
-    ).order_by(models.Word.id.asc()).all()
+    ).order_by(models.Word.nextReviewDate.asc(), models.Word.lastReviewDate.asc(), models.Word.id.asc()).all()
     review_candidates = db.query(models.Word).filter(
         models.Word.userId == current_user.id,
         models.Word.state.notin_(["new", "forgotten"]),
         models.Word.nextReviewDate <= today,
     ).order_by(models.Word.nextReviewDate.asc()).all()
+    forgotten_candidates = _build_forgotten_queue(forgotten_raw_candidates)
 
     new_target = math.ceil(daily_target * NEW_WORD_RATIO)
-    forgotten_target = max(0, daily_target - new_target)
+    forgotten_target = max(0, math.floor(daily_target * MIN_FORGOTTEN_RATIO))
 
     new_quota = min(len(new_candidates), new_target)
     forgotten_quota = min(len(forgotten_candidates), forgotten_target)
@@ -139,10 +166,12 @@ def _build_today_plan(current_user: models.User, db: Session) -> schemas.TodaySt
             new_quota = max(0, daily_target - forgotten_quota)
 
     remaining = daily_target - new_quota - forgotten_quota
+    # 优先补新词，确保“新词占主导”
     if remaining > 0:
         extra_new = min(len(new_candidates) - new_quota, remaining)
         new_quota += extra_new
         remaining -= extra_new
+    # 再补遗忘词，按最老日期队列推进
     if remaining > 0:
         extra_forgotten = min(len(forgotten_candidates) - forgotten_quota, remaining)
         forgotten_quota += extra_forgotten

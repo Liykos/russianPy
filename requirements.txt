@@ -1,7 +1,6 @@
-fastapi>=0.110,<0.123
-uvicorn[standard]>=0.30,<0.39
-SQLAlchemy>=2.0,<2.1
-psycopg2-binary>=2.9,<3
-python-dotenv>=1.0,<2
-bcrypt>=4.0,<6
-pydantic>=2.7,<3
+fastapi==0.133.1
+pydantic==2.12.5
+python-dotenv==1.2.1
+python_bcrypt==0.3.2
+SQLAlchemy==2.0.47
+uvicorn==0.41.0
